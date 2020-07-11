@@ -121,66 +121,48 @@ while True:
             #rename prevents file read before write is complete
             os.rename(grasps_path_temp, grasps_path)
 
-
-
-
-# running = False
-# last_modified = None
-# while True:
-#
-#     #set the number of samples in the configuration
-#     if os.path.exists(sample_path):
-#
-#         #delete the sample file to send a confirmation
-#         os.remove(sample_path)
-#         #allow other code to run
-#         running = True
-#
-#     if running:
-#
-#
-#                 # #plot in matplotlib
-#                 # fig = plt.figure()
-#                 # ax = fig.add_subplot(111, projection='3d')
-#                 # ax.view_init(30, 30)
-#                 # # ax.scatter(pc[:,0], pc[:,1], pc[:,2], '.')
-#                 # ax.scatter(pc[:,0], pc[:,1], pc[:,2], '.')
-#                 # grasp_points = np.array([T[:3,3].reshape(-1) for T in generated_grasps])
-#                 # filtered_grasp_points = []
-#                 # filtered_grasp_scores = []
-#                 # filtered_grasps = []
-#                 # for i in range(len(grasp_points)):
-#                 #     if np.linalg.norm(grasp_points[i])<0.8:
-#                 #         filtered_grasps.append(generated_grasps[i])
-#                 #         filtered_grasp_points.append(grasp_points[i])
-#                 #         filtered_grasp_scores.append(generated_scores[i])
-#                 # filtered_grasp_points = np.array(filtered_grasp_points)
-#                 # ax.scatter(filtered_grasp_points[:,0],filtered_grasp_points[:,1],filtered_grasp_points[:,2])
-#                 #
-#                 # # ax.scatter(max_grasp[0],max_grasp[1],max_grasp[2],'*')
-#                 # # ax.scatter(camera_pose[0,3],camera_pose[1,3],camera_pose[2,3],'y')
-#                 #
-#                 # # ax.scatter(pos_a[0], pos_a[1], pos_a[2])
-#                 # # ax.scatter(pos_b[0], pos_b[1], pos_b[2])
-#                 # # print(pos_x)
-#                 # # print(pos_y)
-#                 # # print(pos_z)
-#                 # # ax.plot([origin[0],pos_x[0]],[origin[1],pos_x[1]],[origin[2],pos_x[2]],'b')
-#                 # # ax.plot([origin[0],pos_y[0]],[origin[1],pos_y[1]],[origin[2],pos_y[2]],'r')
-#                 # # ax.plot([origin[0],pos_z[0]],[origin[1],pos_z[1]],[origin[2],pos_z[2]],'y')
-#                 #
-#                 # ax.set_xlabel('X Label')
-#                 # ax.set_ylabel('Y Label')
-#                 # ax.set_zlabel('Z Label')
-#                 #
-#                 # plt.show()
-#                 #
-#                 # #debug
-#                 # mlab.figure(bgcolor=(1,1,1))
-#                 # draw_scene(
-#                 # pc,
-#                 # pc_color=None,
-#                 # grasps=filtered_grasps,
-#                 # grasp_scores=filtered_grasp_scores,
-#                 # )
-#                 # mlab.show()
+            # #plot in matplotlib
+            # fig = plt.figure()
+            # ax = fig.add_subplot(111, projection='3d')
+            # ax.view_init(30, 30)
+            # # ax.scatter(pc[:,0], pc[:,1], pc[:,2], '.')
+            # ax.scatter(pc[:,0], pc[:,1], pc[:,2], '.')
+            # grasp_points = np.array([T[:3,3].reshape(-1) for T in generated_grasps])
+            # filtered_grasp_points = []
+            # filtered_grasp_scores = []
+            # filtered_grasps = []
+            # for i in range(len(grasp_points)):
+            #     if np.linalg.norm(grasp_points[i])<0.8:
+            #         filtered_grasps.append(generated_grasps[i])
+            #         filtered_grasp_points.append(grasp_points[i])
+            #         filtered_grasp_scores.append(generated_scores[i])
+            # filtered_grasp_points = np.array(filtered_grasp_points)
+            # ax.scatter(filtered_grasp_points[:,0],filtered_grasp_points[:,1],filtered_grasp_points[:,2])
+            #
+            # # ax.scatter(max_grasp[0],max_grasp[1],max_grasp[2],'*')
+            # # ax.scatter(camera_pose[0,3],camera_pose[1,3],camera_pose[2,3],'y')
+            #
+            # # ax.scatter(pos_a[0], pos_a[1], pos_a[2])
+            # # ax.scatter(pos_b[0], pos_b[1], pos_b[2])
+            # # print(pos_x)
+            # # print(pos_y)
+            # # print(pos_z)
+            # # ax.plot([origin[0],pos_x[0]],[origin[1],pos_x[1]],[origin[2],pos_x[2]],'b')
+            # # ax.plot([origin[0],pos_y[0]],[origin[1],pos_y[1]],[origin[2],pos_y[2]],'r')
+            # # ax.plot([origin[0],pos_z[0]],[origin[1],pos_z[1]],[origin[2],pos_z[2]],'y')
+            #
+            # ax.set_xlabel('X Label')
+            # ax.set_ylabel('Y Label')
+            # ax.set_zlabel('Z Label')
+            #
+            # plt.show()
+            #
+            # #debug
+            # mlab.figure(bgcolor=(1,1,1))
+            # draw_scene(
+            # pc,
+            # pc_color=None,
+            # grasps=filtered_grasps,
+            # grasp_scores=filtered_grasp_scores,
+            # )
+            # mlab.show()
