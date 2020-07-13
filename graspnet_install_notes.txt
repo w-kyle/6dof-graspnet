@@ -1,0 +1,30 @@
+#Notes on instalation on Colin's Desktop
+Had to install CUDA 10.0, or there are errors when you try to compile and run examples
+
+I need CUDA 10.2 for other stuff, so I installed alongside using a runfile install
+When prompted I did not add the driver for 10.0 (you need to most recent one for 10.2)
+I did not change the CUDA shortcut folder in usr/local/bin (it still points to 10.2)
+I did not select the option to add the cuda directory to the path
+Instead, I made a Python 2 virtual environment, and modified the activate script to load the environment variables (and unload them properly). 
+Those changes are as follows
+
+
+Other changest to the standard install directions
+had to install a lower version of mayavi that supports python 2.7
+had to sudo apt install Rtree dependendency
+
+#multi gpu errors
+modified point net
+pointnet2/tf_ops/sampling/tf_sampling.py line 64 from:
+    with tf.device('/gpu:1'):
+to:
+    with tf.device('/gpu:0'):
+
+#hardcoded to use GPU 1 but I only have GPU 0?
+
+#had to make the checkpoints folder, does not exist by git default
+#need to add all checkpoint folders from the drive link
+
+#my gpu is not recognized correctly by default. 
+#for some reason I had to add a line to get it to use the GPU
+Added "tf.test.is_gpu_available()" to the beginning of the main demo file, line 24
