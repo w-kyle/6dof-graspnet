@@ -1,3 +1,9 @@
+## File Transfer Protocal
+This branch enables a simple protocal for transfering point clouds and grasp results to and from Python 3 programs.
+USAGE:
+`python graspnet_file_transfer.py <transfer_directory> NUM_GRASPS`
+NUM_GRASPS is optional, the default is 200
+
 # 6-DoF GraspNet: Variational Grasp Generation for Object Manipulation
 Implementation of [6-DoF GraspNet](https://arxiv.org/abs/1905.10520) with tensorflow and python. This repo has been tested with python 2.7 and tensorflow 1.12.
 
@@ -25,7 +31,7 @@ rm tensorflow-1.12.0.a6d8ffa.AVX2.CUDA10-cp27-cp27mu-linux_x86_64.whl
 
 6) Build the tf_ops using `sh compile_pointnet_tfops.sh`.
 
-7) Download the checkpoints to the `checkpoints` folder. Trained checkpoints are released under [CC-BY-NC-SA 2.0](TRAINED_MODEL_LICENSE) and can be downloaded from [here](https://drive.google.com/drive/folders/1mVX2kqXg9BZ22y3HEyqta20tiQrL8OK_?usp=sharing). 
+7) Download the checkpoints to the `checkpoints` folder. Trained checkpoints are released under [CC-BY-NC-SA 2.0](TRAINED_MODEL_LICENSE) and can be downloaded from [here](https://drive.google.com/drive/folders/1mVX2kqXg9BZ22y3HEyqta20tiQrL8OK_?usp=sharing).
 
 
 ## Demo
@@ -81,7 +87,7 @@ python train.py \
   --train_evaluator 1 \
   --dataset_root_folder $DATRASET_ROOT_FOLDER \
   --logdir $EVALUATOR_TRAINING_FOLDER \
-  --ngpus 1 
+  --ngpus 1
 ```
 
 Train multi-gpu using horovod and mpirun (using 8 gpus) as in the paper:
@@ -104,7 +110,7 @@ Example command for running evaluation:
 ```shell
 python eval.py \
   --vae_training_folder $VAE_TRAINING_FOLDER \
-  --evaluator_training_folder $EVALUATOR_TRAINING_FOLDER \ 
+  --evaluator_training_folder $EVALUATOR_TRAINING_FOLDER \
   --eval_data_folder $EVAL_DATA_FOLDER \
   --generate_data_if_missing 1 \
   --dataset_root_folder $DATASET_FOLDER \
